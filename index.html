@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vega Examples Signals Index</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body {
+				font-family: "Arial";
+			}
+			table {
+				border-collapse: collapse;
+			}
+			table, td, th {
+				border: 1px solid black;
+				vertical-align: top;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Vega Examples - Signals Index</h1>
+		<p>This table is an index of the use of dynamic
+			<a href="https://vega.github.io/vega/docs/signals/">signals</a> in
+			<a href="https://vega.github.io/vega/">Vega's</a>
+			<a href="https://vega.github.io/vega/examples/">Example Gallery</a>.
+			It is hopefully helpful when looking for 
+			<a href="https://vega.github.io/vega/docs/signals/#bind">input</a> or
+			<a href="https://vega.github.io/vega/docs/event-streams/">event</a>
+			reference code for a particular interaction.
+		</p>
+		<div id="tbl"></div>
+		
+		<script>
+			var examples = [
+				// Bar Charts
+				{
+					title: "Bar Chart",
+					url: "https://vega.github.io/vega/examples/bar-chart/",
+					inputs: [],
+					events: ["rect:mouseover", "rect:mouseout"]
+				},
+				{
+					title: "Stacked Bar Chart",
+					url: "https://vega.github.io/vega/examples/stacked-bar-chart/",
+					inputs: []
+				},
+				{
+					title: "Grouped Bar Chart",
+					url: "https://vega.github.io/vega/examples/grouped-bar-chart/",
+					inputs: []
+				},
+				{
+					title: "Nested Bar Chart",
+					url: "https://vega.github.io/vega/examples/nested-bar-chart//",
+					inputs: ["range"]
+				},
+				{
+					title: "Population Pyramid",
+					url: "https://vega.github.io/vega/examples/population-pyramid/",
+					inputs: ["range"]
+				},
+				
+				// Line & Area Charts
+				{
+					title: "Line Chart",
+					url: "https://vega.github.io/vega/examples/line-chart/",
+					inputs: ["select"]
+				},
+				{
+					title: "Area Chart",
+					url: "https://vega.github.io/vega/examples/area-chart/",
+					inputs: ["select"]
+				},
+				{
+					title: "Stacked Area Chart",
+					url: "https://vega.github.io/vega/examples/stacked-area-chart/",
+					inputs: [""]
+				},
+				{
+					title: "Horizon Graph",
+					url: "https://vega.github.io/vega/examples/horizon-graph/",
+					inputs: ["select"],
+					events: ["mousedown!"]
+				},
+				{
+					title: "Job Voyager",
+					url: "https://vega.github.io/vega/examples/job-voyager/",
+					inputs: ["radio", "text"],
+					events: ["area:click!", "dblclick!"]
+				},
+				
+				// Circular Charts
+				{
+					title: "Pie Chart",
+					url: "https://vega.github.io/vega/examples/pie-chart/",
+					inputs: ["range", "checkbox"]
+				},
+				{
+					title: "Donut Chart",
+					url: "https://vega.github.io/vega/examples/donut-chart/",
+					inputs: ["range", "checkbox"]
+				},
+				{
+					title: "Radial Plot",
+					url: "https://vega.github.io/vega/examples/radial-plot/",
+					inputs: []
+				},
+				
+				// Dot & Scatter Plots
+				{
+					title: "Scatter Plot",
+					url: "https://vega.github.io/vega/examples/scatter-plot/",
+					inputs: []
+				},
+				{
+					title: "Scatter Plot Null Values",
+					url: "https://vega.github.io/vega/examples/scatter-plot-null-values/",
+					inputs: ["select"]
+				},
+				{
+					title: "Connected Scatter Plot",
+					url: "https://vega.github.io/vega/examples/connected-scatter-plot/",
+					inputs: []
+				},
+				{
+					title: "Error Bars",
+					url: "https://vega.github.io/vega/examples/error-bars/",
+					inputs: ["select"]
+				},
+				{
+					title: "Barley Trellis Plot",
+					url: "https://vega.github.io/vega/examples/barley-trellis-plot/",
+					inputs: []
+				},
+
+				// Probability Distributions
+				{
+					title: "Histogram",
+					url: "https://vega.github.io/vega/examples/histogram/",
+					inputs: ["range"]
+				},
+				{
+					title: "Histogram Null Values",
+					url: "https://vega.github.io/vega/examples/histogram-null-values/",
+					inputs: ["select"]
+				},
+				{
+					title: "Probability Density",
+					url: "https://vega.github.io/vega/examples/probability-density/",
+					inputs: ["range", "radio"]
+				},
+				{
+					title: "Box Plot",
+					url: "https://vega.github.io/vega/examples/box-plot/",
+					inputs: []
+				},
+				{
+					title: "Violin Plot",
+					url: "https://vega.github.io/vega/examples/violin-plot/",
+					inputs: ["range"]
+				},
+				{
+					title: "Binned Scatter Plot",
+					url: "https://vega.github.io/vega/examples/binned-scatter-plot/",
+					inputs: []
+				},
+				{
+					title: "Contour Plot",
+					url: "https://vega.github.io/vega/examples/contour-plot/",
+					inputs: ["select"]
+				},
+
+				// Geographics Maps
+				{
+					title: "County Unemployment",
+					url: "https://vega.github.io/vega/examples/county-unemployment/",
+					inputs: []
+				},
+				{
+					title: "Dorling Carogram",
+					url: "https://vega.github.io/vega/examples/dorling-cartogram/",
+					inputs: []
+				},
+				{
+					title: "World Map",
+					url: "https://vega.github.io/vega/examples/world-map/",
+					inputs: ["select", "range", "radio", "text", "color", "checkbox"]
+				},
+				{
+					title: "Zoomable World Map",
+					url: "https://vega.github.io/vega/examples/zoomable-world-map/",
+					events: ["wheel", "mousedown", "[mousedown, window:mouseup] > window:mousemove"]
+				},
+				{
+					title: "Distortion Comparison",
+					url: "https://vega.github.io/vega/examples/distortion-comparison/",
+					inputs: ["select", "color", "range"]
+				},
+				
+				// Tree Diagrams
+				{
+					title: "Tree Layout",
+					url: "https://vega.github.io/vega/examples/tree-layout/",
+					inputs: ["checkbox", "radio", "select"]
+				},
+				{
+					title: "Radial Tree Layout",
+					url: "https://vega.github.io/vega/examples/radial-tree-layout/",
+					inputs: ["checkbox", "range", "radio", "select"]
+				},
+				{
+					title: "Treemap",
+					url: "https://vega.github.io/vega/examples/treemap/",
+					inputs: ["select", "range"]
+				},
+				{
+					title: "Circle Packing",
+					url: "https://vega.github.io/vega/examples/circle-packing/",
+					inputs: []
+				},
+				{
+					title: "Sunburst",
+					url: "https://vega.github.io/vega/examples/sunburst/",
+					inputs: []
+				},
+				
+				// Network Diagrams
+				{
+					title: "Edge Bundling",
+					url: "https://vega.github.io/vega/examples/edge-bundling/",
+					inputs: ["range", "radio"],
+					events: ["text:mouseover", "mouseover[!event.item]"]
+				},
+				{
+					title: "Force Directed Layout",
+					url: "https://vega.github.io/vega/examples/force-directed-layout/",
+					inputs: ["range", "checkbox"],
+					events: ["symbol:mouseout[!event.buttons], window:mouseup",
+						"symbol:mouseover",
+						"[symbol:mousedown, window:mouseup] > window:mousemove!"]
+				},
+				{
+					title: "Reorderable Matrix",
+					url: "https://vega.github.io/vega/examples/reorderable-matrix/",
+					inputs: [],
+					events: ["text:mousedown",
+						"window:mouseup",
+						"[text:mousedown, window:mouseup] > text:mouseover",
+						"text:mouseout"
+					]
+				},
+				{
+					title: "Arc Diagram",
+					url: "https://vega.github.io/vega/examples/arc-diagram/",
+					inputs: []
+				},
+				{
+					title: "Airport Connections",
+					url: "https://vega.github.io/vega/examples/airport-connections/",
+					inputs: ["range", "radio"],
+					events: ["@cell:mouseover", "@cell:mouseout", "dblclick", "mousedown!"]
+				},
+				
+				// Other Chart Types
+				{
+					title: "Heatmap",
+					url: "https://vega.github.io/vega/examples/heatmap/",
+					inputs: ["select"]
+				},
+				{
+					title: "Parallel Coordinates",
+					url: "https://vega.github.io/vega/examples/parallel-coordinates/",
+					inputs: []
+				},
+				{
+					title: "Word Cloud",
+					url: "https://vega.github.io/vega/examples/word-cloud/",
+					inputs: []
+				},
+				{
+					title: "Timelines",
+					url: "https://vega.github.io/vega/examples/timelines/",
+					inputs: []
+				},
+				{
+					title: "Beeswarm Plot",
+					url: "https://vega.github.io/vega/examples/beeswarm-plot/",
+					inputs: ["range", "checkbox"]
+				},
+				
+				// Custom Visual Designs
+				{
+					title: "Budget Forecasts",
+					url: "https://vega.github.io/vega/examples/budget-forecasts/",
+					inputs: [],
+					events: ["@handle:mousedown",
+						"mouseup",
+						"[@handle:mousedown, window:mouseup] > window:mousemove!",
+						"mousemove"]
+				},
+				{
+					title: "Wheat And Wages",
+					url: "https://vega.github.io/vega/examples/wheat-and-wages/",
+					inputs: []
+				},
+				{
+					title: "Falkansee Population",
+					url: "https://vega.github.io/vega/examples/falkensee-population/",
+					inputs: []
+				},
+				{
+					title: "Annual Temperature",
+					url: "https://vega.github.io/vega/examples/annual-temperature/",
+					inputs: []
+				},
+				{
+					title: "Weekly Temperature",
+					url: "https://vega.github.io/vega/examples/weekly-temperature/",
+					inputs: []
+				},
+				
+				// Interaction Techniques
+				{
+					title: "Crossfilter Flights",
+					url: "https://vega.github.io/vega/examples/crossfilter-flights/",
+					inputs: ["range"],
+					events: ["@delay:wheel!, @delayBrush:wheel!",
+						"[@delayBrush:mousedown, window:mouseup] > window:mousemove!",
+						"[@delay:mousedown, window:mouseup] > window:mousemove!",
+						"@delay:wheel!, @delayBrush:wheel!",
+						"@delay:mousedown!",
+						"@time:dblclick!, @timeBrush:dblclick!",
+						"[@timeBrush:mousedown, window:mouseup] > window:mousemove!",
+						"[@time:mousedown, window:mouseup] > window:mousemove!",
+						"@time:wheel!, @timeBrush:wheel!",
+						"@time:mousedown!",
+						"@dist:dblclick!, @distBrush:dblclick!",
+						"[@distBrush:mousedown, window:mouseup] > window:mousemove!",
+						"[@dist:mousedown, window:mouseup] > window:mousemove!",
+						"@dist:wheel!, @distBrush:wheel!",
+						"@dist:mousedown!",
+						"window:mousemove"
+					]
+				},
+				{
+					title: "Overview Plus Detail",
+					url: "https://vega.github.io/vega/examples/overview-plus-detail/",
+					inputs: []
+				},
+				{
+					title: "Brushing Scatter Plots",
+					url: "https://vega.github.io/vega/examples/brushing-scatter-plots/",
+					events: ["@cell:mousedown",
+						"[@cell:mousedown, window:mouseup] > window:mousemove",
+						"@brush:mousedown",
+						"[@cell:mousedown, window:mouseup] > window:mousemove!",
+						"@brush:mousemove, [@brush:mousedown, window:mouseup] > window:mousemove!",
+						"@brush:mouseout, window:mouseup"]		
+				},
+				{
+					title: "Zoomable Scatter Plot",
+					url: "https://vega.github.io/vega/examples/zoomable-scatter-plot/",
+					events: ["*:mouseover",
+						"*:mouseout",
+						"*:mousedown",
+						"*:mouseup",
+						"touchend",
+						"mousedown, touchstart",
+						"mousedown, touchstart, touchend",
+						"wheel",
+						"wheel!",
+						"touchstart",
+						"touchmove"
+					]
+				},
+				{
+					title: "Global Development",
+					url: "https://vega.github.io/vega/examples/global-development/",
+					inputs: []
+				},
+				{
+					title: "Interactive Legend",
+					url: "https://vega.github.io/vega/examples/interactive-legend/",
+					inputs: [],
+					events: ["mouseup[!event.item]",
+						"@legendSymbol:click, @legendLabel:click",
+						"@xaxis:mousedown",
+						"[@xaxis:mousedown, window:mouseup] > window:mousemove!",
+						"@brush:mousedown",
+						"[@brush:mousedown, window:mouseup] > window:mousemove!"
+				]
+				},
+				{
+					title: "Stock Index Chart",
+					url: "https://vega.github.io/vega/examples/stock-index-chart/",
+					inputs: [],
+					events: ["mousemove"]
+				}
+			];
+
+		function getInputValues(examples) {
+			var map = new Map();
+			for (var i = 0; i < examples.length; i++) {
+				try {
+					var ex = examples[i];
+					for (var j = 0; j < ex.inputs.length; j++) {
+						var input = ex.inputs[j].trim().toLowerCase();
+						if (input) {
+							map.set(input, input);
+						}
+					}
+				} catch(e) {
+				}
+			}
+
+			var inputs = [];
+			map.forEach(function(value, key, map) {
+				inputs.push(value);
+			});
+			return inputs.sort();
+		}
+
+		function render(examples) {
+			// Determine input values
+			var inputValues = getInputValues(examples);
+
+			var html = ["<table>"];
+			html.push("<thead>");
+			html.push("<tr>");
+			html.push("<th><a href='https://vega.github.io/vega/examples/' target='_blank'>" +
+				"Vega Example</a></th>");
+			inputValues.forEach(function(value, key, map) {
+				html.push("<th>");
+				html.push(value);
+				html.push("</th>");
+			});
+			html.push("<th><a href='https://vega.github.io/vega/docs/event-streams/' target='_blank'>" +
+				"Event Stream</a> Sample Usage</th>");
+			html.push("</tr>");
+
+			for (var i = 0; i < examples.length; i++) {
+				var ex = examples[i];
+				if ((ex.inputs && ex.inputs.length > 0) || (ex.events && ex.events.length > 0)) {
+					html.push("<tr>");
+
+					// Vega Example
+					html.push("<td><a href='");
+					html.push(ex.url);
+					html.push("' target='_blank'>");
+					html.push(ex.title);
+					html.push("</a>");
+					
+					// Input Element
+					inputValues.forEach(function(value, key, map) {
+						html.push("<td>");
+						if (ex.inputs && ex.inputs.includes(value)) {
+							html.push("Y");
+						}
+						html.push("</td>");
+					});
+
+					// Event Stream Sample Usage
+					html.push("<td>");
+					if (ex.events) {
+						for (var j = 0; j < ex.events.length; j++) {
+							if (j > 0) {
+								html.push("<br>");
+							}
+							html.push(ex.events[j]);
+						}
+					}
+					html.push("</td>");
+
+					html.push("</tr>");
+				}
+			}
+
+			html.push("</table>");
+
+			document.getElementById("tbl").innerHTML = html.join('');
+		}
+		
+		render(examples);
+		</script>
+	</body>
+</html>
