@@ -52,7 +52,7 @@
 				},
 				{
 					title: "Nested Bar Chart",
-					url: "https://vega.github.io/vega/examples/nested-bar-chart//",
+					url: "https://vega.github.io/vega/examples/nested-bar-chart/",
 					inputs: ["range"]
 				},
 				{
@@ -428,14 +428,14 @@
 			var html = ["<table>"];
 			html.push("<thead>");
 			html.push("<tr>");
-			html.push("<th><a href='https://vega.github.io/vega/examples/' target='_blank'>" +
+			html.push("<th><a href='https://vega.github.io/vega/examples/'>" +
 				"Vega Example</a></th>");
 			inputValues.forEach(function(value, key, map) {
 				html.push("<th>");
 				html.push(value);
 				html.push("</th>");
 			});
-			html.push("<th><a href='https://vega.github.io/vega/docs/event-streams/' target='_blank'>" +
+			html.push("<th><a href='https://vega.github.io/vega/docs/event-streams/'>" +
 				"Event Stream</a> Sample Usage</th>");
 			html.push("</tr>");
 
@@ -447,7 +447,7 @@
 					// Vega Example
 					html.push("<td><a href='");
 					html.push(ex.url);
-					html.push("' target='_blank'>");
+					html.push("'>");
 					html.push(ex.title);
 					html.push("</a>");
 					
