@@ -3,4 +3,4 @@ Vega Examples - Signals Index
 
 Index of Vega examples that handle interactions through its signals
 
-https://cdn.rawgit.com/kenklin/vega-examples-signals-index/master/index.html
+http://htmlpreview.github.io/?https://github.com/kenklin/vega-examples-signals-index/blob/master/index.html
